@@ -1,0 +1,258 @@
+:root {
+  color-scheme: dark;
+  --bg: #131314;
+  --surface: #1e1f20;
+  --surface-hover: #282a2c;
+  --border: rgba(255, 255, 255, 0.09);
+  --text: #e3e3e3;
+  --text-muted: #9aa0a6;
+  --accent: #a8c7fa;
+  --accent-strong: #669df6;
+  --accent-bg: rgba(168, 199, 250, 0.14);
+  --success: #81c995;
+  --success-bg: rgba(129, 201, 149, 0.14);
+  --warning: #fdd663;
+  --warning-bg: rgba(253, 214, 99, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 312px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Google Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+.popup {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.brand-icon {
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.subtitle {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.badge-active {
+  color: var(--success);
+  background: var(--success-bg);
+}
+
+.badge-paused {
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.badge-override {
+  color: var(--warning);
+  background: var(--warning-bg);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 11px 12px;
+}
+
+.status-card {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.status-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.status-value {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 175px;
+}
+
+.status-value.highlight {
+  color: var(--accent);
+}
+
+.status-value.muted {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.status-hint {
+  font-size: 11px;
+  color: var(--text-muted);
+  padding-top: 2px;
+}
+
+.controls-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.toggle-title {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.toggle-desc {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: #3c4043;
+  transition: background 150ms ease;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  left: 3px;
+  top: 3px;
+  border-radius: 50%;
+  background: #e8eaed;
+  transition: transform 150ms ease, background 150ms ease;
+}
+
+.switch input:checked + .slider {
+  background: var(--accent-strong);
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(16px);
+  background: #ffffff;
+}
+
+.switch input:focus-visible + .slider {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.primary-btn {
+  width: 100%;
+  border: 1px solid rgba(168, 199, 250, 0.28);
+  border-radius: 10px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 9px 12px;
+  cursor: pointer;
+  transition: background 140ms ease, border-color 140ms ease, opacity 140ms ease;
+}
+
+.primary-btn:hover:not(:disabled) {
+  background: rgba(168, 199, 250, 0.22);
+  border-color: rgba(168, 199, 250, 0.45);
+}
+
+.primary-btn:active:not(:disabled) {
+  background: rgba(168, 199, 250, 0.28);
+}
+
+.primary-btn:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+}

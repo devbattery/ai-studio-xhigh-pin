@@ -1,0 +1,9 @@
+{
+  "name": "ai-studio-xhigh-pin",
+  "version": "1.0.0",
+  "description": "Chrome extension that automatically pins Google AI Studio's Thinking Level to the highest available option for any model.",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  }
+}

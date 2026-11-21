@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Studio XHigh Pin</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="header">
+        <div class="brand">
+          <img src="../icons/icon32.png" alt="" class="brand-icon" width="24" height="24" />
+          <div>
+            <h1 class="title">AI Studio XHigh Pin</h1>
+            <p class="subtitle">Always max Thinking Level</p>
+          </div>
+        </div>
+        <span id="status-badge" class="badge badge-active">Active</span>
+      </header>
+
+      <section class="card status-card" aria-label="Current tab status">
+        <div class="status-row">
+          <span class="status-label">Model</span>
+          <span id="model-value" class="status-value muted">—</span>
+        </div>
+        <div class="status-row">
+          <span class="status-label">Thinking Level</span>
+          <span id="level-value" class="status-value muted">—</span>
+        </div>
+        <p id="status-hint" class="status-hint">Open Google AI Studio to see live status.</p>
+      </section>
+
+      <section class="card controls-card" aria-label="Extension settings">
+        <label class="toggle-row" for="toggle-enabled">
+          <span class="toggle-text">
+            <span class="toggle-title">Auto-pin max level</span>
+            <span class="toggle-desc">Automatically select the highest available level on any model</span>
+          </span>
+          <span class="switch">
+            <input id="toggle-enabled" type="checkbox" checked />
+            <span class="slider"></span>
+          </span>
+        </label>
+
+        <div class="divider"></div>
+
+        <label class="toggle-row" for="toggle-override">
+          <span class="toggle-text">
+            <span class="toggle-title">Allow manual override</span>
+            <span class="toggle-desc">Keep your manual selection until switching model or resetting</span>
+          </span>
+          <span class="switch">
+            <input id="toggle-override" type="checkbox" checked />
+            <span class="slider"></span>
+          </span>
+        </label>
+      </section>
+
+      <button id="pin-now-btn" class="primary-btn" type="button" disabled>
+        Pin Max Now
+      </button>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
